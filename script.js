@@ -69,5 +69,6 @@ reset.addEventListener("click", () => {
 rock.addEventListener("click", () => determineResult("rock"));
 paper.addEventListener("click", () => determineResult("paper"));
 scissors.addEventListener("click", () => determineResult("scissors"));
+
 resetGame();
 

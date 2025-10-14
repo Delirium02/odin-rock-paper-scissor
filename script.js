@@ -45,6 +45,11 @@ function determineResult(playerChoice) {
     result.textContent += ` Computer chose ${computerChoice}. You chose ${playerChoice}.`;
     result.textContent += ` Score: You ${humanScore} - Computer ${computerScore}`;
 
+    resetGame(); // Check if the game should end after each round
+}
+
+
+function resetGame() {
     if (humanScore === 5 || computerScore === 5) {
         const winner = humanScore === 5 ? "You win the game!" : "Computer wins the game!";
         result.textContent = `${winner} Final Score: You ${humanScore} - Computer ${computerScore}`;
@@ -54,7 +59,8 @@ function determineResult(playerChoice) {
         scissors.disabled = true;
     }
 }
-    
+
+
 reset.addEventListener("click", () => {
     humanScore = 0;
     computerScore = 0;
@@ -70,5 +76,5 @@ rock.addEventListener("click", () => determineResult("rock"));
 paper.addEventListener("click", () => determineResult("paper"));
 scissors.addEventListener("click", () => determineResult("scissors"));
 
-resetGame();
+
 
